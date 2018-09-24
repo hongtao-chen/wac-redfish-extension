@@ -1,0 +1,63 @@
+{
+    "name": "redfish",
+    "displayName": "Redfish Device",
+    "target": "modules/redfish",
+    "icon": "sme-icon:icon-win-server",
+    "keywords": [
+        "redfish"
+    ],
+    "entryPoints": [
+        {
+            "entryPointType": "solution",
+            "name": "solution",
+            "urlName": "solution",
+            "displayName": "Redfish Device Manager",
+            "icon": "sme-icon:icon-win-server",
+            "rootNavigationBehavior": "connections",
+            "connections": {
+                "header": "Redfish Device Connections",
+                "connectionTypes": [
+                    "redfish-connection"
+                ]
+            },
+            "tools": {
+                "enabled": true,
+                "defaultTool": "deviceOverview"
+            }
+        },
+        {
+            "entryPointType": "connectionProvider",
+            "name": "redfish",
+            "urlName": "redfish",
+            "path": "/add",
+            "displayName": "Redfish Device Connection",
+            "icon": "sme-icon:icon-win-server",
+            "connectionType": "redfish-connection",
+            "connectionTypeName": "Redfish Device",
+            "connectionTypeUrlName": "redfish",
+            "connectionTypeDefaultSolution": "redfish!solution",
+            "connectionTypeDefaultTool": "redfish!deviceOverview",
+            "connectionStatusProvider": {
+                "skipStatusCheck": true
+            }
+        },
+        {
+            "entryPointType": "tool",
+            "name": "deviceOverview",
+            "urlName": "deviceOverview",
+            "path": "/",
+            "icon": "sme-icon:icon-win-server",
+            "displayName": "Overview",
+            "requirements": [
+                {
+                    "solutionIds": [
+                        "redfish!solution"
+                    ],
+                    "connectionTypes": [
+                        "redfish-connection"
+                    ]
+                }
+            ]
+        }
+    ]
+}

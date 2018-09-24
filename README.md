@@ -7,3 +7,6 @@ This is en example how to create a [Windows Admin Center solution extension](htt
 
 ## UI Framework
 Unlike the official [SDK](https://cloudblogs.microsoft.com/windowsserver/2018/09/20/windows-admin-center-1809-and-sdk-now-generally-available/) I'm using the [Vue](https://github.com/vuejs/vue) as the UI framework, instead of [Angular](https://github.com/angular/angular). It's to demonstrate that we can write WAC extension with other JavaScript frameworks, not about which is better.
+
+## Must Know
+As of now, this implementation is just a demo to connect to the backend physical server's redfish service endpoint inside the WAC UI. It's NOT recommended to use it anywhere except testing the design.
